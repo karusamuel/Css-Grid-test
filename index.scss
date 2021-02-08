@@ -1,0 +1,235 @@
+
+$font-stack: Helvetica, sans-serif;
+$font-color: #ffffff;
+$primary-color: #150545;
+$button-color: #8568DA;
+$width:100%;
+
+*{
+    box-sizing: border-box;
+}
+
+.content{
+   margin:auto;
+   width: 90%;
+   margin-top: 30px;
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 900px) {
+    .content {width: 80%;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .content {width: 60%;
+    }
+  }
+
+
+body {
+    font: 100% $font-stack;
+    color: $font-color;
+    background-color: $primary-color;
+    background-image: url("/images/landing_bg.svg");
+    background-repeat: repeat-y;
+    background-size: 100vw 100vh;
+  }
+
+ nav{
+display:flex;
+width: $width;
+margin: auto;
+justify-content: space-between;
+
+
+
+
+        .logo{
+          align-self: center;  
+        }
+
+        ul{
+
+            list-style: none;
+            // display: none;
+            position: relative;
+            display: inline-block;
+
+            li{
+                display: inline-block;
+                padding: 10px;
+                color:$button-color ;
+                display: none;
+                position: absolute;
+                bottom: 50px;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            
+        }
+        .nav-button:hover{
+         
+            li{
+                display: block;
+            }
+         
+        }
+
+        @media only screen and (min-width: 700px) {
+            ul{
+                display:block;
+            }
+            .nav-button{
+                display: none;
+            }
+          }
+
+
+
+ }
+
+ .selected{
+     color: #ffffff;
+ }
+
+ .landing{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    width:  $width;
+    margin: auto;
+    margin-top: 100px;
+  
+    .left{
+
+
+
+              
+            display: flex;
+            flex-direction: column;
+
+            h2{
+                font-size: 200%;
+                    word-wrap: none;
+                    word-break: unset;
+
+                    @media only screen and (min-width: 700px) {
+                        font-size: 300%;
+                      }
+            }
+
+
+
+            .call-to-action-parent{
+                display: flex;
+                align-items: center;
+                margin-top: 100px;
+
+                *{
+                    margin: 10px;
+                }
+
+
+
+                .call-to-action{
+            
+                    padding: 10px;
+                    border-radius: 5px;
+                    width: 200px; 
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    background-color: $button-color ;
+                    text-align: center;
+                    cursor:pointer;
+                    box-shadow:40px 40px 42px rgba(0, 0, 0, 0.25) ;
+                    
+                 }
+
+                 .styled-text{
+                    color: $button-color;
+
+                 }
+
+            }
+        
+           
+
+    }
+
+    .right{
+
+        display: flex;
+        img{
+            max-width: 100%;
+            height: auto;
+            position: relative;
+            animation: float 3s linear infinite;
+        }
+
+        @keyframes float{
+            0%{
+               
+                 top: 0px;
+            }
+            25%{
+                top:10px;
+            }
+            50%{
+        
+                top:0px;
+            }
+            75%{
+                top:-10px;
+            }
+            100%{
+                top:0px;
+            }
+        }
+
+    }
+
+    
+
+    
+
+
+ }
+
+
+ .about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    margin-top: 20vh;
+    height: 300px;
+
+    .about-content{
+        padding: 8px;
+        margin: 8px;
+        display: flex;
+        flex-direction: column;
+    
+
+
+
+        .about-content-header{
+            display: flex;
+            img{
+                    align-self: center;
+
+            }
+            h3{
+                align-self:center;
+                margin: auto 20px;
+            }
+
+        }
+    }
+ }
